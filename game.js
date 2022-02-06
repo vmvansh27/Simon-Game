@@ -16,15 +16,8 @@ function nextSequence() {
     
 }
 
-// $("#"+randomChosenColour).fadeOut(100).fadeIn(100);
-// $('#'+randomChosenColour).fadeOut(100).fadeIn(100).ready(function() {
-//     const audio = new Audio("sounds/"+randomChosenColour+".mp3" );
-//     audio.play();
-//     });
-
 $(".btn").click(function() {
     var userChosenColour=$(this).attr("id");
-    // console.log(userChosenColour);
     playSound(userChosenColour);
     animatePress(userChosenColour);
     userClickPattern.push(userChosenColour);
@@ -53,13 +46,7 @@ $("body").keypress(function() {
 
 function checkAnswer(currentLevel) {
     if(userClickPattern[currentLevel]===gamePattern[currentLevel]){
-        // var count=0;
-        // for(var i=0;i<gamePattern.length;i++){
-        //     if(gamePattern[i] === userClickPattern[i]){
-        //         // if the two values matche, count + 1
-        //         count++;
-        //     }
-        // }
+
         if(currentLevel === gamePattern.length-1){
             console.log("success");
             setTimeout(function(){
